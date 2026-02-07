@@ -8,15 +8,22 @@ Projet dvp web - groupe 5
 
 ## Exécution du pipeline
 
-python -m titanic.features
-python -m titanic.modeling.train
-python -m titanic.modeling.predict
+python -m titanic.features          # génération des features
+python -m titanic.modeling.train    # entraînement du modèle
+python -m titanic.modeling.predict  # prédictions sur le test set
 
 ## Prérequis
 
 - Python 3.8+
 - Librairies : pandas, scikit-learn, joblib, typer, loguru, tqdm
 - Installer via : `pip install -r requirements.txt` ou `pip install -r requirements.txt --use-deprecated=legacy-resolver`
+
+## Lancement des tests
+
+python -m pytest tests                  # lance tous les tests
+python -m pytest tests/test_features.py # test des features uniquement
+python -m pytest tests/test_train.py    # test de l'entraînement uniquement
+python -m pytest tests/test_predict.py  # test des prédictions uniquement
 
 
 ## Project Organization
