@@ -6,11 +6,17 @@ on:
       - main
       - develop
       - william
+      - terryl
+      - clara
+      - matteo
   pull_request:
     branches:
       - main
       - develop
       - william
+      - terryl
+      - clara
+      - matteo
 
 jobs:
   test:
