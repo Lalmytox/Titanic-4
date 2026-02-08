@@ -5,18 +5,12 @@ on:
     branches:
       - main
       - develop
-      - william
-      - terryl
-      - clara
-      - matteo
+      - 'persos/**'
   pull_request:
     branches:
       - main
       - develop
-      - william
-      - terryl
-      - clara
-      - matteo
+      - 'persos/**'
 
 jobs:
   test:
