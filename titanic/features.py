@@ -1,3 +1,10 @@
+"""
+Module de feature engineering pour le dataset Titanic.
+
+Ce module effectue le nettoyage des données et la création de caractéristiques
+à partir des fichiers bruts de train et de test Kaggle.
+"""
+
 from pathlib import Path
 
 import pandas as pd
@@ -15,7 +22,19 @@ def main(
     test_path: Path = RAW_DATA_DIR / "test.csv",
 ):
     """
-    Nettoyage des données et ingénierie des caractéristiques
+    Nettoyage des données et ingénierie des caractéristiques.
+
+    Ce script :
+    - Charge les fichiers train.csv et test.csv depuis le dossier data/raw/
+    - Effectue une analyse exploratoire simple (taux de survie par sexe)
+    - Sélectionne les features pertinentes (Pclass, Sex, SibSp, Parch)
+    - Applique l'encodage one-hot pour les variables catégorielles
+    - Aligne les colonnes entre train et test
+    - Sauvegarde les features traitées dans data/processed/
+
+    Args:
+        train_path: Chemin vers le fichier d'entraînement brut
+        test_path: Chemin vers le fichier de test brut
     """
 
     logger.info("Chargement des données")

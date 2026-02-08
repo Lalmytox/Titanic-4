@@ -1,3 +1,10 @@
+"""
+Module de prédiction pour le projet Titanic.
+
+Ce module utilise un modèle entraîné pour générer des prédictions
+sur le dataset de test et créer un fichier de soumission Kaggle.
+"""
+
 from pathlib import Path
 
 import pandas as pd
@@ -18,7 +25,21 @@ def main(
     output_path: Path = Path("submission.csv"),
 ):
     """
-    Génération des prédictions et création du fichier de soumission
+    Génération des prédictions et création du fichier de soumission.
+
+    Ce script :
+    - Charge le modèle entraîné depuis models/model.pkl
+    - Charge les features de test depuis data/processed/X_test.csv
+    - Charge les données brutes pour récupérer les PassengerId
+    - Génère les prédictions sur le dataset de test
+    - Crée un fichier submission.csv avec PassengerId et Survived
+    - Sauvegarde le fichier de soumission à la racine du projet
+
+    Args:
+        features_path: Chemin vers le fichier des features de test
+        raw_test_path: Chemin vers le fichier de test brut (pour PassengerId)
+        model_path: Chemin vers le modèle entraîné
+        output_path: Chemin de sauvegarde du fichier de soumission
     """
 
     logger.info("Chargement du modèle")

@@ -28,33 +28,63 @@ Projet dvp web - groupe 5 | IUT Paris Cité | BUT VCOD 2025-2026
 ## Objectif du projet
 Ce projet consiste à transformer un notebook Kaggle de prédiction de survie sur le Titanic en un projet Python structuré (via cookiecutter-data-science), respectant les bonnes pratiques d'ingénierie logicielle : modularité, tests, documentation, collaboration Git et pipeline CI/CD.
 
-## Prérequis
-- Python 3.8+
-- Librairies : pandas, scikit-learn, joblib, typer, loguru, tqdm
-- Installer via : 
-  ```bash
-  pip install -r requirements.txt
-  # Ou si problème de dépendances :
-  pip install -r requirements.txt --use-deprecated=legacy-resolver
+## Installation
 
-## Exécution du pipeline
+### Cloner le dépôt
+```bash
+git clone https://github.com/Lalmytox/Titanic-4.git
+cd Titanic-4
+```
 
-python -m titanic.features          # génération des features
-python -m titanic.modeling.train    # entraînement du modèle
-python -m titanic.modeling.predict  # prédictions sur le test set
+### Créer et activer un environnement virtuel
+```bash
+python -m venv .venv
 
-## Prérequis
+# Windows (PowerShell)
+.\.venv\Scripts\Activate.ps1
+# Windows (cmd.exe)
+.\.venv\Scripts\activate
 
-- Python 3.8+
-- Librairies : pandas, scikit-learn, joblib, typer, loguru, tqdm
-- Installer via : `pip install -r requirements.txt` ou `pip install -r requirements.txt --use-deprecated=legacy-resolver`
+# Linux/Mac
+source .venv/bin/activate
+```
 
-## Lancement des tests
+### Installer les dépendances
+```bash
+pip install -r requirements.txt
+# Si problème de dépendances :
+pip install -r requirements.txt --use-deprecated=legacy-resolver
+```
 
+### Préparer les données
+Télécharger `train.csv` et `test.csv` depuis [Kaggle Titanic](https://www.kaggle.com/c/titanic/data) et les placer dans `data/raw/`.
+
+## Utilisation
+
+### Exécution du pipeline
+
+```bash
+# 1. Génération des features
+python -m titanic.features
+# Résultat : fichiers dans data/processed/ (X_train.csv, y_train.csv, X_test.csv)
+
+# 2. Entraînement du modèle
+python -m titanic.modeling.train
+# Résultat : modèle sauvegardé dans models/model.pkl
+
+# 3. Prédictions sur le test set
+python -m titanic.modeling.predict
+# Résultat : fichier submission.csv généré à la racine
+```
+
+### Lancement des tests
+
+```bash
 python -m pytest tests                  # lance tous les tests
 python -m pytest tests/test_features.py # test des features uniquement
 python -m pytest tests/test_train.py    # test de l'entraînement uniquement
 python -m pytest tests/test_predict.py  # test des prédictions uniquement
+```
 
 
 ## Project Organization

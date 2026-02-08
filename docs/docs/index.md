@@ -1,8 +1,5 @@
 # Titanic documentation!
 IUT Paris Cité | BUT VCOD (Groupe 5) 2025-2026
-```markdown
-# Documentation - Titanic
-IUT Paris Cité | BUT VCOD (Groupe 5) 2025-2026
 
 ## Description
 
