@@ -23,26 +23,21 @@ python -m venv .venv
 pip install -r requirements.txt
 ```
 
-3) Placer les données brutes
-
-Télécharger `train.csv` et `test.csv` (Kaggle Titanic) et les déposer dans `data/raw/`.
-Le script `titanic/features.py` lit `data/raw/train.csv` et `data/raw/test.csv`.
-
-4) Générer les features (données traitées)
+3) Générer les features (données traitées)
 
 ```bash
 python -m titanic.features
 # Résultat : fichiers dans data/processed/ (X_train.csv, y_train.csv, X_test.csv)
 ```
 
-5) Entraîner le modèle
+4) Entraîner le modèle
 
 ```bash
 python -m titanic.modeling.train
 # Le modèle est sauvegardé dans models/model.pkl
 ```
 
-6) Faire des prédictions et produire le fichier de soumission
+5) Faire des prédictions et produire le fichier de soumission
 
 ```bash
 python -m titanic.modeling.predict
@@ -62,8 +57,4 @@ Dépannage rapide
   et que `requirements.txt` a bien été installé.
 - Si les chemins posent problème, consultez `titanic/config.py` pour les
   chemins par défaut (`data/raw`, `data/processed`, `models/`).
-
-Si vous voulez, je peux :
-- ajouter ou adapter des commandes `make` pour exécuter `features` / `train` / `predict` ;
-- commiter ces modifications et préparer un petit guide d'exécution en français.
 ```
