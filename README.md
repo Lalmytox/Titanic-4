@@ -56,9 +56,6 @@ pip install -r requirements.txt
 pip install -r requirements.txt --use-deprecated=legacy-resolver
 ```
 
-### Préparer les données
-Télécharger `train.csv` et `test.csv` depuis [Kaggle Titanic](https://www.kaggle.com/c/titanic/data) et les placer dans `data/raw/`.
-
 ## Utilisation
 
 ### Exécution du pipeline
