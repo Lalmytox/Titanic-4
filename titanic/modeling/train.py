@@ -1,3 +1,10 @@
+"""
+Module d'entraînement de modèle pour le projet Titanic.
+
+Ce module entraîne un modèle de machine learning sur les features traitées
+et sauvegarde le modèle entraîné pour une utilisation ultérieure.
+"""
+
 from pathlib import Path
 
 import pandas as pd
@@ -18,7 +25,18 @@ def main(
     model_path: Path = MODELS_DIR / "model.pkl",
 ):
     """
-    Entraînement du modèle et sauvegarde
+    Entraînement du modèle et sauvegarde.
+
+    Ce script :
+    - Charge les features (X_train) et les labels (y_train) depuis data/processed/
+    - Initialise un classificateur RandomForest avec 100 arbres et profondeur 5
+    - Entraîne le modèle sur les données d'entraînement
+    - Sauvegarde le modèle entraîné dans models/model.pkl
+
+    Args:
+        features_path: Chemin vers le fichier des features d'entraînement
+        labels_path: Chemin vers le fichier des labels d'entraînement
+        model_path: Chemin de sauvegarde du modèle entraîné
     """
 
     logger.info("Chargement des données d'entraînement")
