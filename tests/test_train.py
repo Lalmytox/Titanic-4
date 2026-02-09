@@ -1,9 +1,7 @@
-import pandas as pd
-import pytest
-from pathlib import Path
 import joblib
 
-from titanic.modeling.train import main 
+from titanic.modeling.train import main
+
 
 def test_train_creates_model_file(tmp_path, sample_train_data, monkeypatch):
     X, y = sample_train_data
