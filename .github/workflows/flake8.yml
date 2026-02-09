@@ -29,7 +29,7 @@ jobs:
           pip install -r requirements.txt
 
       - name: Check format (black)
-        run: python -m black --check src
+        run: python -m black --check src titanic tests
 
       - name: Run flake8
         run: python -m flake8 src
