@@ -23,7 +23,7 @@ def make_features(
     """
     Construit X, y et X_test comme dans le tutoriel Titanic:
     - y = train['Survived']
-    
+
     """
     y = train_df[TARGET_COL]
 
